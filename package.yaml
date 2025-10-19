@@ -1,0 +1,57 @@
+name:                Tarea1
+version:             0.1.0.0
+synopsis:            Tarea 1 - Haskell SOS
+category:            Education
+author:              "Kevin Briceño"
+maintainer:          "15-11661@usb.ve"
+license:             MIT
+
+# Informacion adicional
+extra-source-files:
+  - README.md
+  - Tarea_l_Laboratorio_de_Lenguajes_de_programación.pdf
+
+# Descripción del proyecto
+description: |
+  Proyecto de ejemplo para Tarea 1 en Haskell.
+
+# Dependencias globales
+dependencies:
+  - base >= 4.7 && < 5
+
+# Biblioteca principal
+library:
+  source-dirs: src
+  exposed-modules:
+    - Tarea1
+  ghc-options:
+    - -Wall
+  default-language: Haskell2010
+  dependencies:
+    - base >= 4.7 && < 5
+
+# Ejecutable principal
+executables:
+  tarea1-exe:
+    main: Main.hs
+    source-dirs: src
+    ghc-options:
+      - -Wall
+    default-language: Haskell2010
+    dependencies:
+      - Tarea1
+
+# Suite de pruebas usando HUnit
+tests:
+  tarea1-test:
+    main: Test.hs
+    hs-source-dirs:
+      - test
+    type: exitcode-stdio-1.0
+    ghc-options:
+      - -Wall
+    default-language: Haskell2010
+    dependencies:
+      - Tarea1
+      - HUnit
+      - base >= 4.7 && < 5
